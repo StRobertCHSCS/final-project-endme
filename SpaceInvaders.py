@@ -21,6 +21,7 @@ Border.hideturtle()
 
 #Creating the ship
 Ship = turtle.Turtle()
+Ship.speed(0)
 Ship.shape("triangle")
 Ship.setposition(0, -250)
 Ship.showturtle()
