@@ -19,12 +19,14 @@ for side in range(4):
     Border.lt(90)
 Border.hideturtle()
 
+# ship picture
+turtle.register_shape("ship.gif")
+
 #Creating the ship
 Ship = turtle.Turtle()
-Ship.shape("triangle")
+Ship.shape("ship.gif")
 Ship.setposition(0, -250)
 Ship.showturtle()
-Ship.color("Light Blue")
 Ship.lt(90)
 
 #Moving the ship
@@ -73,11 +75,14 @@ def shootbullet():
         Bullet.showturtle()
 
 
+# Images of aliens
+
+turtle.register_shape("Invader.gif")
 
 
 #Making the alien
 alien = turtle.Turtle()
-alien.shape("square")
+alien.shape("Invader.gif")
 alien.penup()
 alien.speed(0)
 alien.setposition(-250, 250)
@@ -118,5 +123,17 @@ while True:
     if Bullet.ycor() > 280:
         Bullet.hideturtle()
         Bulletstate = "ready"
+
+
+
+
+
+# Collisions with aliens
+
+
+
+# Randomizing alien spawning
+
+
 
 turtle.done()
