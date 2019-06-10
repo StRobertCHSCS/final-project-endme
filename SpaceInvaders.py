@@ -64,7 +64,7 @@ Bullet.penup()
 Bullet.speed(0)
 Bullet.hideturtle()
 
-Bulletspeed = 25
+Bulletspeed = 40
 
 #Creating bullet states ready to shoot and shooting
 Bulletstate = "ready"
@@ -84,27 +84,65 @@ def shootbullet():
 
 turtle.register_shape("alien.gif")
 
-# randomizing alien spawning
-number_of_aliens = 6
+#Randomizing alien spawning
+alien1 = turtle.Turtle()
+alien1.hideturtle()
+alien1.shape("alien.gif")
+alien1.penup()
+alien1.speed(0)
+alien1.setposition(-225,250)
+alien1.color("green")
+alien1.showturtle()
 
-aliens = []
+alien2 = turtle.Turtle()
+alien2.hideturtle()
+alien2.shape("alien.gif")
+alien2.penup()
+alien2.speed(0)
+alien2.setposition(-125,250)
+alien2.color("green")
+alien2.showturtle()
 
-for i in range(number_of_aliens):
-    aliens.append(turtle.Turtle())
-#Making the alien
+alien3 = turtle.Turtle()
+alien3.hideturtle()
+alien3.shape("alien.gif")
+alien3.penup()
+alien3.speed(0)
+alien3.setposition(-25,250)
+alien3.color("green")
+alien3.showturtle()
 
-for alien in aliens:
-    alien.shape("alien.gif")
-    alien.penup()
-    alien.speed(0)
-    x = random.randint(-200, 200)
-    y = random.randint(100, 250)
-    alien.setposition(x, y)
-    alien.color("green")
+alien4 = turtle.Turtle()
+alien4.hideturtle()
+alien4.shape("alien.gif")
+alien4.penup()
+alien4.speed(0)
+alien4.setposition(25,250)
+alien4.color("green")
+alien4.showturtle()
+
+
+alien5 = turtle.Turtle()
+alien5.hideturtle()
+alien5.shape("alien.gif")
+alien5.penup()
+alien5.speed(0)
+alien5.setposition(125,250)
+alien5.color("green")
+alien5.showturtle()
+
+alien6 = turtle.Turtle()
+alien6.hideturtle()
+alien6.shape("alien.gif")
+alien6.penup()
+alien6.speed(0)
+alien6.setposition(225,250)
+alien6.color("green")
+alien6.showturtle()
 
 alienspeed = 2
 
-# collision with bullet and alien
+#Collision with bullet and alien
 def collision(c1, c2):
     distance = math.sqrt(math.pow(c1.xcor() - c2.xcor(), 2) + math.pow(c1.ycor() - c2.ycor(), 2))
     if distance < 25:
@@ -119,25 +157,103 @@ turtle.onkeypress(moveright, "Right")
 turtle.onkey(shootbullet, "space")
 
 #Main loops
-condition = "true"
 while True:
-    for alien in aliens:
-        #Make alien move
-        x = alien.xcor()
-        x += alienspeed
-        alien.setx(x)
-        #Making the alien zig zag
-        if alien.xcor() > 250:
-            alienspeed *= -1
-            y = alien.ycor()
-            y -= 50
-            alien.sety(y)
+  #Make alien1 move
+    x = alien1.xcor()
+    x += alienspeed
+    alien1.setx(x)
+        #Making alien1 zig zag
+    if alien1.xcor() > 250:
+        alienspeed *= -1
+        y = alien1.ycor()
+        y -= 50
+        alien1.sety(y)
 
-        if alien.xcor() < - 250:
-            alienspeed *= -1
-            y = alien.ycor()
-            y -= 50
-            alien.sety(y)
+    if alien1.xcor() < - 250:
+        alienspeed *= -1
+        y = alien1.ycor()
+        y -= 50
+        alien1.sety(y)
+    #Makiing alien2 move
+    x = alien2.xcor()
+    x += alienspeed
+    alien2.setx(x)
+    # Making alien2 zig zag
+    if alien2.xcor() > 250:
+        alienspeed *= -1
+        y = alien2.ycor()
+        y -= 50
+        alien2.sety(y)
+
+    if alien2.xcor() < - 250:
+        alienspeed *= -1
+        y = alien2.ycor()
+        y -= 50
+        alien2.sety(y)
+    #Making alien3 move
+    x = alien3.xcor()
+    x += alienspeed
+    alien3.setx(x)
+    # Making alien2 zig zag
+    if alien3.xcor() > 250:
+        alienspeed *= -1
+        y = alien3.ycor()
+        y -= 50
+        alien3.sety(y)
+
+    if alien3.xcor() < - 250:
+        alienspeed *= -1
+        y = alien3.ycor()
+        y -= 50
+        alien3.sety(y)
+    #Making alien4 move
+    x = alien4.xcor()
+    x += alienspeed
+    alien4.setx(x)
+    # Making alien2 zig zag
+    if alien4.xcor() > 250:
+        alienspeed *= -1
+        y = alien4.ycor()
+        y -= 50
+        alien4.sety(y)
+
+    if alien4.xcor() < - 250:
+        alienspeed *= -1
+        y = alien4.ycor()
+        y -= 50
+        alien4.sety(y)
+    #Making alien5 move
+    x = alien5.xcor()
+    x += alienspeed
+    alien5.setx(x)
+    # Making alien2 zig zag
+    if alien5.xcor() > 250:
+        alienspeed *= -1
+        y = alien5.ycor()
+        y -= 50
+        alien5.sety(y)
+
+    if alien5.xcor() < - 250:
+        alienspeed *= -1
+        y = alien5.ycor()
+        y -= 50
+        alien5.sety(y)
+    #Making alien6 move
+    x = alien6.xcor()
+    x += alienspeed
+    alien6.setx(x)
+    # Making alien2 zig zag
+    if alien6.xcor() > 250:
+        alienspeed *= -1
+        y = alien6.ycor()
+        y -= 50
+        alien6.sety(y)
+
+    if alien6.xcor() < - 250:
+        alienspeed *= -1
+        y = alien6.ycor()
+        y -= 50
+        alien6.sety(y)
     #Shooting the bullet
     if Bulletstate == "fire":
         y = Bullet.ycor()
@@ -146,13 +262,65 @@ while True:
     if Bullet.ycor() > 280:
         Bullet.hideturtle()
         Bulletstate = "ready"
-    #collision with alien
-    if collision(Bullet, alien):
+    #collision with alien1
+    if collision(Bullet, alien1)== True:
         Bullet.hideturtle()
         Bulletstate = "ready"
         Bullet.setposition(0, -400)
         x = random.randint(-200, 200)
         y = random.randint(100, 250)
-        alien.setposition(x, y)
+        alien1.setposition(x, y)
+    if collision(Bullet, alien1):
+        print ("GAME OVER")
+    #Collision with alien2
+    if collision(Bullet, alien2)== True:
+        Bullet.hideturtle()
+        Bulletstate = "ready"
+        Bullet.setposition(0, -400)
+        x = random.randint(-200, 200)
+        y = random.randint(100, 250)
+        alien2.setposition(x, y)
+    if collision(Bullet, alien2):
+        print ("GAME OVER")
+    #Collision with alien3
+    if collision(Bullet, alien3)== True:
+        Bullet.hideturtle()
+        Bulletstate = "ready"
+        Bullet.setposition(0, -400)
+        x = random.randint(-200, 200)
+        y = random.randint(100, 250)
+        alien3.setposition(x, y)
+    if collision(Bullet, alien3):
+        print ("GAME OVER")
+    #Collision with alien4
+    if collision(Bullet, alien4)== True:
+        Bullet.hideturtle()
+        Bulletstate = "ready"
+        Bullet.setposition(0, -400)
+        x = random.randint(-200, 200)
+        y = random.randint(100, 250)
+        alien4.setposition(x, y)
+    if collision(Bullet, alien4):
+        print ("GAME OVER")
+    #Collision with alien5
+    if collision(Bullet, alien5)== True:
+        Bullet.hideturtle()
+        Bulletstate = "ready"
+        Bullet.setposition(0, -400)
+        x = random.randint(-200, 200)
+        y = random.randint(100, 250)
+        alien5.setposition(x, y)
+    if collision(Bullet, alien5):
+        print ("GAME OVER")
+    #Collision with alien6
+    if collision(Bullet, alien6)== True:
+        Bullet.hideturtle()
+        Bulletstate = "ready"
+        Bullet.setposition(0, -400)
+        x = random.randint(-200, 200)
+        y = random.randint(100, 250)
+        alien6.setposition(x, y)
+    if collision(Bullet, alien6):
+        print ("GAME OVER")
 
 turtle.done()
