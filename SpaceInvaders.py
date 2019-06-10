@@ -20,12 +20,13 @@ for side in range(4):
 Border.hideturtle()
 
 # ship picture
-turtle.register_shape("ship.gif")
+turtle.register_shape("Spaceship.gif")
 
 #Creating the ship
 Ship = turtle.Turtle()
+Ship.penup()
 Ship.speed(0)
-Ship.shape("ship.gif")
+Ship.shape("Spaceship.gif")
 Ship.setposition(0, -250)
 Ship.showturtle()
 Ship.lt(90)
