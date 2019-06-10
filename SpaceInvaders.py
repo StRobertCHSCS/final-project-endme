@@ -1,5 +1,7 @@
 import random
 import turtle
+import os
+import math
 
 #Creating the screen
 Space = turtle.Screen()
@@ -77,20 +79,38 @@ def shootbullet():
         Bullet.showturtle()
 
 
+
 # Images of aliens
 
 turtle.register_shape("alien.gif")
 
+# randomizing alien spawning
+number_of_aliens = 6
 
+aliens = []
+
+for i in range(number_of_aliens):
+    aliens.append(turtle.Turtle())
 #Making the alien
-alien = turtle.Turtle()
-alien.shape("alien.gif")
-alien.penup()
-alien.speed(0)
-alien.setposition(-250, 250)
-alien.color("green")
+
+for alien in aliens:
+    alien.shape("alien.gif")
+    alien.penup()
+    alien.speed(0)
+    x = random.randint(-200, 200)
+    y = random.randint(100, 250)
+    alien.setposition(x, y)
+    alien.color("green")
 
 alienspeed = 2
+
+# collision with bullet and alien
+def collision(c1, c2):
+    distance = math.sqrt(math.pow(c1.xcor() - c2.xcor(), 2) + math.pow(c1.ycor() - c2.ycor(), 2))
+    if distance < 25:
+        return True
+    else:
+        return False
 
 #Connecting keys to functions
 turtle.listen()
@@ -101,22 +121,23 @@ turtle.onkey(shootbullet, "space")
 #Main loops
 condition = "true"
 while True:
-    #Make alien move
-    x = alien.xcor()
-    x += alienspeed
-    alien.setx(x)
-    #Making the alien zig zag
-    if alien.xcor() > 250:
-        alienspeed *= -1
-        y = alien.ycor()
-        y -= 50
-        alien.sety(y)
+    for alien in aliens:
+        #Make alien move
+        x = alien.xcor()
+        x += alienspeed
+        alien.setx(x)
+        #Making the alien zig zag
+        if alien.xcor() > 250:
+            alienspeed *= -1
+            y = alien.ycor()
+            y -= 50
+            alien.sety(y)
 
-    if alien.xcor() < - 250:
-        alienspeed *= -1
-        y = alien.ycor()
-        y -= 50
-        alien.sety(y)
+        if alien.xcor() < - 250:
+            alienspeed *= -1
+            y = alien.ycor()
+            y -= 50
+            alien.sety(y)
     #Shooting the bullet
     if Bulletstate == "fire":
         y = Bullet.ycor()
@@ -125,17 +146,13 @@ while True:
     if Bullet.ycor() > 280:
         Bullet.hideturtle()
         Bulletstate = "ready"
-
-
-
-
-
-# Collisions with aliens
-
-
-
-# Randomizing alien spawning
-
-
+    #collision with alien
+    if collision(Bullet, alien):
+        Bullet.hideturtle()
+        Bulletstate = "ready"
+        Bullet.setposition(0, -400)
+        x = random.randint(-200, 200)
+        y = random.randint(100, 250)
+        alien.setposition(x, y)
 
 turtle.done()
