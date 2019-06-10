@@ -79,12 +79,12 @@ def shootbullet():
 
 # Images of aliens
 
-turtle.register_shape("Invader.gif")
+turtle.register_shape("alien.gif")
 
 
 #Making the alien
 alien = turtle.Turtle()
-alien.shape("Invader.gif")
+alien.shape("alien.gif")
 alien.penup()
 alien.speed(0)
 alien.setposition(-250, 250)
