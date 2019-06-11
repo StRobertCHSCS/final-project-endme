@@ -21,6 +21,18 @@ for side in range(4):
     Border.lt(90)
 Border.hideturtle()
 
+#Creating a score
+score = 0
+points = turtle.Turtle()
+points.speed(0)
+points.color("white")
+points.penup()
+points.setposition(-310,310)
+style = "Score: %s" %score
+points.clear()
+points.write(style, False, align="left", font=("Courier", 16, "bold"))
+points.hideturtle()
+
 # ship picture
 turtle.register_shape("Spaceship.gif")
 
@@ -140,12 +152,12 @@ alien6.setposition(225,250)
 alien6.color("green")
 alien6.showturtle()
 
-alienspeed1 = 2
-alienspeed2 = 2
-alienspeed3 = 2
-alienspeed4 = 2
-alienspeed5 = 2
-alienspeed6 = 2
+alienspeed1 = 4
+alienspeed2 = 4
+alienspeed3 = 4
+alienspeed4 = 4
+alienspeed5 = 4
+alienspeed6 = 4
 
 #Collision with bullet and alien
 def collision(c1, c2):
@@ -270,62 +282,86 @@ while True:
     #collision with alien1
     if collision(Bullet, alien1)== True:
         Bullet.hideturtle()
+        score += 10
+        style = "Score: %s" % score
+        points.clear()
+        points.write(style, False, align="left", font=("Courier", 16, "bold"))
         Bulletstate = "ready"
         Bullet.setposition(0, -400)
         x = random.randint(-200, 200)
         y = random.randint(100, 250)
         alien1.setposition(x, y)
-    if collision(Bullet, alien1):
+    if collision(Ship, alien1):
         print ("GAME OVER")
     #Collision with alien2
     if collision(Bullet, alien2)== True:
         Bullet.hideturtle()
+        score += 10
+        style = "Score: %s" % score
+        points.clear()
+        points.write(style, False, align="left", font=("Courier", 16, "bold"))
         Bulletstate = "ready"
         Bullet.setposition(0, -400)
         x = random.randint(-200, 200)
         y = random.randint(100, 250)
         alien2.setposition(x, y)
-    if collision(Bullet, alien2):
+    if collision(Ship, alien2):
         print ("GAME OVER")
     #Collision with alien3
     if collision(Bullet, alien3)== True:
         Bullet.hideturtle()
+        score += 10
+        style = "Score: %s" % score
+        points.clear()
+        points.write(style, False, align="left", font=("Courier", 16, "bold"))
         Bulletstate = "ready"
         Bullet.setposition(0, -400)
         x = random.randint(-200, 200)
         y = random.randint(100, 250)
         alien3.setposition(x, y)
-    if collision(Bullet, alien3):
+    if collision(Ship, alien3):
         print ("GAME OVER")
     #Collision with alien4
     if collision(Bullet, alien4)== True:
         Bullet.hideturtle()
+        score += 10
+        style = "Score: %s" % score
+        points.clear()
+        points.write(style, False, align="left", font=("Courier", 16, "bold"))
         Bulletstate = "ready"
         Bullet.setposition(0, -400)
         x = random.randint(-200, 200)
         y = random.randint(100, 250)
         alien4.setposition(x, y)
-    if collision(Bullet, alien4):
+    if collision(Ship, alien4):
         print ("GAME OVER")
     #Collision with alien5
     if collision(Bullet, alien5)== True:
         Bullet.hideturtle()
+        score += 10
+        style = "Score: %s" % score
+        points.clear()
+        points.write(style, False, align="left", font=("Courier", 16, "bold"))
         Bulletstate = "ready"
         Bullet.setposition(0, -400)
         x = random.randint(-200, 200)
         y = random.randint(100, 250)
         alien5.setposition(x, y)
-    if collision(Bullet, alien5):
+    if collision(Ship, alien5):
         print ("GAME OVER")
     #Collision with alien6
     if collision(Bullet, alien6)== True:
         Bullet.hideturtle()
+        score += 10
+        style = "Score: %s" % score
+        points.clear()
+        points.write(style, False, align="left", font=("Courier", 16, "bold"))
         Bulletstate = "ready"
         Bullet.setposition(0, -400)
         x = random.randint(-200, 200)
         y = random.randint(100, 250)
         alien6.setposition(x, y)
-    if collision(Bullet, alien6):
+    if collision(Ship, alien6):
         print ("GAME OVER")
 
 turtle.done()
