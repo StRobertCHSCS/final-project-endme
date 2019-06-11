@@ -159,6 +159,9 @@ alienspeed4 = 4
 alienspeed5 = 4
 alienspeed6 = 4
 
+#Creating lives
+lives = 0
+
 #Collision with bullet and alien
 def collision(c1, c2):
     distance = math.sqrt(math.pow(c1.xcor() - c2.xcor(), 2) + math.pow(c1.ycor() - c2.ycor(), 2))
