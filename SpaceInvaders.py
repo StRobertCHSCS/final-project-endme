@@ -140,7 +140,12 @@ alien6.setposition(225,250)
 alien6.color("green")
 alien6.showturtle()
 
-alienspeed = 2
+alienspeed1 = 2
+alienspeed2 = 2
+alienspeed3 = 2
+alienspeed4 = 2
+alienspeed5 = 2
+alienspeed6 = 2
 
 #Collision with bullet and alien
 def collision(c1, c2):
@@ -160,97 +165,97 @@ turtle.onkey(shootbullet, "space")
 while True:
   #Make alien1 move
     x = alien1.xcor()
-    x += alienspeed
+    x += alienspeed1
     alien1.setx(x)
         #Making alien1 zig zag
     if alien1.xcor() > 250:
-        alienspeed *= -1
+        alienspeed1 *= -1
         y = alien1.ycor()
         y -= 50
         alien1.sety(y)
 
     if alien1.xcor() < - 250:
-        alienspeed *= -1
+        alienspeed1 *= -1
         y = alien1.ycor()
         y -= 50
         alien1.sety(y)
     #Makiing alien2 move
     x = alien2.xcor()
-    x += alienspeed
+    x += alienspeed2
     alien2.setx(x)
     # Making alien2 zig zag
     if alien2.xcor() > 250:
-        alienspeed *= -1
+        alienspeed2 *= -1
         y = alien2.ycor()
         y -= 50
         alien2.sety(y)
 
     if alien2.xcor() < - 250:
-        alienspeed *= -1
+        alienspeed2 *= -1
         y = alien2.ycor()
         y -= 50
         alien2.sety(y)
     #Making alien3 move
     x = alien3.xcor()
-    x += alienspeed
+    x += alienspeed3
     alien3.setx(x)
-    # Making alien2 zig zag
+    # Making alien3 zig zag
     if alien3.xcor() > 250:
-        alienspeed *= -1
+        alienspeed3 *= -1
         y = alien3.ycor()
         y -= 50
         alien3.sety(y)
 
     if alien3.xcor() < - 250:
-        alienspeed *= -1
+        alienspeed3 *= -1
         y = alien3.ycor()
         y -= 50
         alien3.sety(y)
     #Making alien4 move
     x = alien4.xcor()
-    x += alienspeed
+    x += alienspeed4
     alien4.setx(x)
-    # Making alien2 zig zag
+    # Making alien4 zig zag
     if alien4.xcor() > 250:
-        alienspeed *= -1
+        alienspeed4 *= -1
         y = alien4.ycor()
         y -= 50
         alien4.sety(y)
 
     if alien4.xcor() < - 250:
-        alienspeed *= -1
+        alienspeed4 *= -1
         y = alien4.ycor()
         y -= 50
         alien4.sety(y)
     #Making alien5 move
     x = alien5.xcor()
-    x += alienspeed
+    x += alienspeed5
     alien5.setx(x)
-    # Making alien2 zig zag
+    # Making alien5 zig zag
     if alien5.xcor() > 250:
-        alienspeed *= -1
+        alienspeed5 *= -1
         y = alien5.ycor()
         y -= 50
         alien5.sety(y)
 
     if alien5.xcor() < - 250:
-        alienspeed *= -1
+        alienspeed5 *= -1
         y = alien5.ycor()
         y -= 50
         alien5.sety(y)
     #Making alien6 move
     x = alien6.xcor()
-    x += alienspeed
+    x += alienspeed6
     alien6.setx(x)
-    # Making alien2 zig zag
+    # Making alien6 zig zag
     if alien6.xcor() > 250:
-        alienspeed *= -1
+        alienspeed6 *= -1
         y = alien6.ycor()
         y -= 50
         alien6.sety(y)
 
     if alien6.xcor() < - 250:
-        alienspeed *= -1
+        alienspeed6 *= -1
         y = alien6.ycor()
         y -= 50
         alien6.sety(y)
