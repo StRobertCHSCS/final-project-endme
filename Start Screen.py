@@ -23,4 +23,10 @@ button.setposition(0,-150)
 button.write("PRESS ENTER TO START" ,font=("Courier", 30, "bold"), align='center')
 button.hideturtle()
 
+title = turtle.Turtle()
+turtle.register_shape("Title.gif")
+title.shape("Title.gif")
+title.speed(0)
+title.setposition(0,300)
+
 turtle.done()
