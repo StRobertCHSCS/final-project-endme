@@ -152,28 +152,12 @@ alien6.setposition(225,250)
 alien6.color("green")
 alien6.showturtle()
 
-alienspeed1 = 4
-alienspeed2 = 4
-alienspeed3 = 4
-alienspeed4 = 4
-alienspeed5 = 4
-alienspeed6 = 4
-
-#Creating lives
-lives = 0
-
-#Creating alien bullet (lazer)
-lazer1 = turtle.Turtle()
-lazer1.hideturtle()
-lazer1.shape("circle")
-lazer1.color("yellow")
-lazer1.shapesize(.2)
-lazer1.speed(0)
-lazer1.penup()
-x1 = alien1.xcor()
-y1 = alien1.ycor()
-lazer1.setposition(x1,y1)
-lazerspeed = 20
+alienspeed1 = 8
+alienspeed2 = 8
+alienspeed3 = 8
+alienspeed4 = 8
+alienspeed5 = 8
+alienspeed6 = 8
 
 
 #Collision with bullet and alien
@@ -196,15 +180,6 @@ while True:
     x = alien1.xcor()
     x += alienspeed1
     alien1.setx(x)
-    lazer1.showturtle()
-    y = lazer1.ycor()
-    y -= lazerspeed
-    lazer1.sety(y)
-    if lazer1.xcor() < -250:
-        lazer1.hideturtle()
-        x1 = alien1.xcor()
-        y1 = alien1.ycor()
-        lazer1.setposition(x1, y1)
         #Making alien1 zig zag
     if alien1.xcor() > 250:
         alienspeed1 *= -1
