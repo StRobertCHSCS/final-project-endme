@@ -348,6 +348,7 @@ while True:
         alien1.setposition(x, y)
     if collision(Ship, alien1):
         print ("GAME OVER")
+        break 
     #Collision with alien2
     if collision(Bullet, alien2)== True:
         Bullet.hideturtle()
@@ -362,6 +363,7 @@ while True:
         alien2.setposition(x, y)
     if collision(Ship, alien2):
         print ("GAME OVER")
+        break
     #Collision with alien3
     if collision(Bullet, alien3)== True:
         Bullet.hideturtle()
@@ -376,6 +378,7 @@ while True:
         alien3.setposition(x, y)
     if collision(Ship, alien3):
         print ("GAME OVER")
+        break
     #Collision with alien4
     if collision(Bullet, alien4)== True:
         Bullet.hideturtle()
@@ -390,6 +393,7 @@ while True:
         alien4.setposition(x, y)
     if collision(Ship, alien4):
         print ("GAME OVER")
+        break
     #Collision with alien5
     if collision(Bullet, alien5)== True:
         Bullet.hideturtle()
@@ -404,6 +408,7 @@ while True:
         alien5.setposition(x, y)
     if collision(Ship, alien5):
         print ("GAME OVER")
+        break
     #Collision with alien6
     if collision(Bullet, alien6)== True:
         Bullet.hideturtle()
@@ -418,6 +423,7 @@ while True:
         alien6.setposition(x, y)
     if collision(Ship, alien6):
         print ("GAME OVER")
+        break
     #Collision with alien7
     if collision(Bullet, alien7)== True:
         Bullet.hideturtle()
@@ -432,6 +438,7 @@ while True:
         alien7.setposition(x, y)
     if collision(Ship, alien7):
         print ("GAME OVER")
+        break
     #Collision with alien8
     if collision(Bullet, alien8)== True:
         Bullet.hideturtle()
@@ -446,5 +453,6 @@ while True:
         alien8.setposition(x, y)
     if collision(Ship, alien8):
         print ("GAME OVER")
+        break
 
 turtle.done()
