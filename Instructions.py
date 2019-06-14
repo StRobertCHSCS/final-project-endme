@@ -86,15 +86,14 @@ Enemy.write ( "will attack you. Your job is to destroy", font=("Courier", 15, "b
 Enemy.setposition(-200, -70)
 Enemy.write ( "them and prevent them from reaching your", font=("Courier", 15, "bold"), align= 'left')
 Enemy.setposition(-200, -100)
-Enemy.write ( "ship. You have three lives if you are hit", font=("Courier", 15, "bold"), align= 'left')
+Enemy.write ( "ship. If an alien reaches your ship ", font=("Courier", 15, "bold"), align= 'left')
 Enemy.setposition(-200, -130)
-Enemy.write ( "three times or an alien reaches you its", font=("Courier", 15, "bold"), align= 'left')
+Enemy.write ( "its GAME OVER. Each alien is worth", font=("Courier", 15, "bold"), align= 'left')
 Enemy.setposition(-200, -160)
-Enemy.write ( "GAME OVER. Each alien is worth 10 points", font=("Courier", 15, "bold"), align= 'left')
+Enemy.write ( "10 points try to get the highest", font=("Courier", 15, "bold"), align= 'left')
 Enemy.setposition(-200, -190)
-Enemy.write ( "try to get the highest score possible,", font=("Courier", 15, "bold"), align= 'left')
-Enemy.setposition(-200, -220)
-Enemy.write ( "good luck!", font=("Courier", 15, "bold"), align= 'left')
+Enemy.write ( "score possible, Good Luck!", font=("Courier", 15, "bold"), align= 'left')
+
 turtle.done()
 
 

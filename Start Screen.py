@@ -21,6 +21,8 @@ button.penup()
 button.color("White")
 button.setposition(0,-150)
 button.write("PRESS ENTER TO START" ,font=("Courier", 30, "bold"), align='center')
+button.setposition(175,-200)
+button.write("*Press I to see instructions ", font=("Courier", 15, "bold"), align='right')
 button.hideturtle()
 
 title = turtle.Turtle()

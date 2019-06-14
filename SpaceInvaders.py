@@ -111,7 +111,7 @@ alien2.hideturtle()
 alien2.shape("alien.gif")
 alien2.penup()
 alien2.speed(0)
-alien2.setposition(-125,250)
+alien2.setposition(-150,250)
 alien2.color("green")
 alien2.showturtle()
 
@@ -120,7 +120,7 @@ alien3.hideturtle()
 alien3.shape("alien.gif")
 alien3.penup()
 alien3.speed(0)
-alien3.setposition(-25,250)
+alien3.setposition(-75,250)
 alien3.color("green")
 alien3.showturtle()
 
@@ -129,7 +129,7 @@ alien4.hideturtle()
 alien4.shape("alien.gif")
 alien4.penup()
 alien4.speed(0)
-alien4.setposition(25,250)
+alien4.setposition(0,250)
 alien4.color("green")
 alien4.showturtle()
 
@@ -139,7 +139,7 @@ alien5.hideturtle()
 alien5.shape("alien.gif")
 alien5.penup()
 alien5.speed(0)
-alien5.setposition(125,250)
+alien5.setposition(75,250)
 alien5.color("green")
 alien5.showturtle()
 
@@ -148,9 +148,27 @@ alien6.hideturtle()
 alien6.shape("alien.gif")
 alien6.penup()
 alien6.speed(0)
-alien6.setposition(225,250)
+alien6.setposition(150,250)
 alien6.color("green")
 alien6.showturtle()
+
+alien7 = turtle.Turtle()
+alien7.hideturtle()
+alien7.shape("alien.gif")
+alien7.penup()
+alien7.speed(0)
+alien7.setposition(225,250)
+alien7.color("green")
+alien7.showturtle()
+
+alien8 = turtle.Turtle()
+alien8.hideturtle()
+alien8.shape("alien.gif")
+alien8.penup()
+alien8.speed(0)
+alien8.setposition(100,250)
+alien8.color("green")
+alien8.showturtle()
 
 alienspeed1 = 8
 alienspeed2 = 8
@@ -158,6 +176,8 @@ alienspeed3 = 8
 alienspeed4 = 8
 alienspeed5 = 8
 alienspeed6 = 8
+alienspeed7 = 8
+alienspeed8 = 8
 
 
 #Collision with bullet and alien
@@ -272,6 +292,40 @@ while True:
         y = alien6.ycor()
         y -= 50
         alien6.sety(y)
+
+    # Make alien7 move
+    x = alien7.xcor()
+    x += alienspeed7
+    alien7.setx(x)
+    # Making alien1 zig zag
+    if alien7.xcor() > 250:
+        alienspeed7 *= -1
+        y = alien7.ycor()
+        y -= 50
+        alien7.sety(y)
+
+    if alien7.xcor() < - 250:
+        alienspeed7 *= -1
+        y = alien7.ycor()
+        y -= 50
+        alien7.sety(y)
+
+    # Make alien8 move
+    x = alien8.xcor()
+    x += alienspeed8
+    alien8.setx(x)
+    # Making alien8 zig zag
+    if alien8.xcor() > 250:
+        alienspeed8 *= -1
+        y = alien8.ycor()
+        y -= 50
+        alien8.sety(y)
+
+    if alien8.xcor() < - 250:
+        alienspeed8 *= -1
+        y = alien8.ycor()
+        y -= 50
+        alien8.sety(y)
     #Shooting the bullet
     if Bulletstate == "fire":
         y = Bullet.ycor()
@@ -363,6 +417,34 @@ while True:
         y = random.randint(100, 250)
         alien6.setposition(x, y)
     if collision(Ship, alien6):
+        print ("GAME OVER")
+    #Collision with alien7
+    if collision(Bullet, alien7)== True:
+        Bullet.hideturtle()
+        score += 10
+        style = "Score: %s" % score
+        points.clear()
+        points.write(style, False, align="left", font=("Courier", 16, "bold"))
+        Bulletstate = "ready"
+        Bullet.setposition(0, -400)
+        x = random.randint(-200, 200)
+        y = random.randint(100, 250)
+        alien7.setposition(x, y)
+    if collision(Ship, alien7):
+        print ("GAME OVER")
+    #Collision with alien8
+    if collision(Bullet, alien8)== True:
+        Bullet.hideturtle()
+        score += 10
+        style = "Score: %s" % score
+        points.clear()
+        points.write(style, False, align="left", font=("Courier", 16, "bold"))
+        Bulletstate = "ready"
+        Bullet.setposition(0, -400)
+        x = random.randint(-200, 200)
+        y = random.randint(100, 250)
+        alien8.setposition(x, y)
+    if collision(Ship, alien8):
         print ("GAME OVER")
 
 turtle.done()
