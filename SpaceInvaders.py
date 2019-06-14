@@ -348,7 +348,7 @@ while True:
         alien1.setposition(x, y)
     if collision(Ship, alien1):
         print ("GAME OVER")
-        break 
+        break
     #Collision with alien2
     if collision(Bullet, alien2)== True:
         Bullet.hideturtle()
