@@ -6,6 +6,8 @@ Space = turtle.Screen()
 Space.bgcolor("Black")
 Space.title("Start")
 
+Bulletstate = "ready"
+
 Border = turtle.Turtle()
 Border.speed(0)
 Border.color("Purple")
@@ -33,6 +35,8 @@ turtle.register_shape("Title.gif")
 title.shape("Title.gif")
 title.speed(0)
 title.setposition(0,300)
+
+
 
 def pressenter():
     button.clear()
@@ -92,11 +96,7 @@ def pressenter():
     Bullet.penup()
     Bullet.speed(0)
     Bullet.hideturtle()
-
     Bulletspeed = 40
-
-    # Creating bullet states ready to shoot and shooting
-    Bulletstate = "ready"
 
     def shootbullet():
         global Bulletstate
@@ -206,6 +206,34 @@ def pressenter():
     turtle.onkeypress(moveleft, "Left")
     turtle.onkeypress(moveright, "Right")
     turtle.onkey(shootbullet, "space")
+
+    def gameover():
+        alien1.setposition (-600,-600)
+        alien1.hideturtle()
+        alien2.setposition(-600, -600)
+        alien2.hideturtle()
+        alien3.setposition(-600, -600)
+        alien3.hideturtle()
+        alien4.setposition(-600, -600)
+        alien4.hideturtle()
+        alien5.setposition(-600, -600)
+        alien5.hideturtle()
+        alien6.setposition(-600, -600)
+        alien6.hideturtle()
+        alien7.setposition(-600, -600)
+        alien7.hideturtle()
+        alien8.setposition(-600, -600)
+        alien8.hideturtle()
+        Ship.setposition(-600, -600)
+        Ship.hideturtle()
+        points.clear()
+        points.hideturtle()
+
+        game = turtle.Turtle()
+        turtle.register_shape("GAME OVER.gif")
+        game.shape("GAME OVER.gif")
+        game.setposition(0, 0)
+
 
     # Main loops
     while True:
@@ -340,6 +368,7 @@ def pressenter():
             y -= 50
             alien8.sety(y)
         # Shooting the bullet
+        global Bulletstate
         if Bulletstate == "fire":
             y = Bullet.ycor()
             y += Bulletspeed
@@ -361,6 +390,7 @@ def pressenter():
             alien1.setposition(x, y)
         if collision(Ship, alien1):
             print("GAME OVER")
+            gameover()
             break
             # Collision with alien2
         if collision(Bullet, alien2) == True:
@@ -376,6 +406,7 @@ def pressenter():
             alien2.setposition(x, y)
         if collision(Ship, alien2):
             print("GAME OVER")
+            gameover()
             break
         # Collision with alien3
         if collision(Bullet, alien3) == True:
@@ -391,6 +422,7 @@ def pressenter():
             alien3.setposition(x, y)
         if collision(Ship, alien3):
             print("GAME OVER")
+            gameover()
             break
         # Collision with alien4
         if collision(Bullet, alien4) == True:
@@ -406,6 +438,7 @@ def pressenter():
             alien4.setposition(x, y)
         if collision(Ship, alien4):
             print("GAME OVER")
+            gameover()
             break
         # Collision with alien5
         if collision(Bullet, alien5) == True:
@@ -421,6 +454,7 @@ def pressenter():
             alien5.setposition(x, y)
         if collision(Ship, alien5):
             print("GAME OVER")
+            gameover()
             break
         # Collision with alien6
         if collision(Bullet, alien6) == True:
@@ -436,6 +470,7 @@ def pressenter():
             alien6.setposition(x, y)
         if collision(Ship, alien6):
             print("GAME OVER")
+            gameover()
             break
         # Collision with alien7
         if collision(Bullet, alien7) == True:
@@ -451,6 +486,7 @@ def pressenter():
             alien7.setposition(x, y)
         if collision(Ship, alien7):
             print("GAME OVER")
+            gameover()
             break
         # Collision with alien8
         if collision(Bullet, alien8) == True:
@@ -466,6 +502,7 @@ def pressenter():
             alien8.setposition(x, y)
         if collision(Ship, alien8):
             print("GAME OVER")
+            gameover()
             break
 
 Play = turtle.Turtle()
